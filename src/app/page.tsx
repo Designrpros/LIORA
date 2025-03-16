@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Waveform from '../components/Waveform'; // Adjust path as needed
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'; // Using react-icons
-import About from './pages/about/page'; // Import your actual About component
-import Projects from './pages/projects/page'; // Import your actual Projects component
-import Contact from './pages/contact/page'; // Import your actual Contact component
+import About from './about/page'; // Import your actual About component
+import Projects from './projects/page'; // Import your actual Projects component
+import Contact from './contact/page'; // Import your actual Contact component
 
 const AuroraB = "/AuroraB.jpeg";
 const flows = "/flows.png"; // Define flows for FlowerBackground
