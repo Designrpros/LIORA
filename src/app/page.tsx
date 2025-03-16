@@ -98,11 +98,15 @@ const Container = styled.div`
   background-color: #f9f9f9;
   position: relative;
   overflow: hidden;
-  border: 8px solid #000000;  /* Added border */
-  box-sizing: border-box;      /* Ensures border doesn't affect layout */
-  padding-bottom: 80px;        /* Space for bottom navigation */
-  height: 100vh;               /* Full viewport height */
-  width: 100vw;                /* Full viewport width */
+  border: 8px solid #000000;
+  box-sizing: border-box;
+  padding-bottom: 80px;
+  height: 100vh;
+  width: 100vw;
+
+  @media (max-width: 768px) {
+    padding-bottom: 60px; /* Reduce space for smaller screens */
+  }
 `;
 
 const FlowerBackground = styled.div`
@@ -124,24 +128,44 @@ const FlowerBackground = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 3.5rem; /* Larger font size */
+  font-size: 3.5rem;
   font-weight: bold;
   color: #333;
-  margin-top: 160px; /* Increased margin-top to push the title even closer to the Polaroid */
-  margin-bottom: 15px; /* Further reduced margin-bottom */
+  margin-top: 160px;
+  margin-bottom: 15px;
   text-transform: uppercase;
-  z-index: 1; /* Above flower background */
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem; /* Smaller font size for tablets */
+    margin-top: 120px;  /* Adjust top margin for smaller screens */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem; /* Further reduction for mobile */
+    margin-top: 80px;
+  }
 `;
 
 const CustomTabBar = styled.div`
   display: flex;
-  gap: 18px; /* Reduced gap between tabs */
-  margin-bottom: 25px; /* Reduced margin-bottom for tabs */
-  z-index: 1; /* Above flower background */
+  gap: 18px;
+  margin-bottom: 25px;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    gap: 12px;  /* Reduce the gap on smaller screens */
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;  /* Further reduce the gap and stack vertically on mobile */
+  }
 `;
 
 const TabLink = styled.a`
-  font-size: 1.3rem; /* Slightly larger font size */
+  font-size: 1.3rem;
   color: #333;
   text-decoration: none;
   padding: 10px 15px;
@@ -150,6 +174,11 @@ const TabLink = styled.a`
 
   &:hover {
     background-color: #ddd;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem; /* Smaller text on mobile */
+    padding: 8px 12px; /* Adjust padding for mobile */
   }
 `;
 
@@ -163,10 +192,21 @@ const TabBar = styled.div`
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    padding: 10px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px; /* Stack buttons vertically on mobile */
+  }
 `;
 
 const TabButton = styled.button`
-  font-size: 1.3rem; /* Larger font size */
+  font-size: 1.3rem;
   color: #333;
   background: none;
   border: none;
@@ -179,6 +219,10 @@ const TabButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem; /* Smaller text for mobile */
+  }
 `;
 
 const MainContent = styled.div`
@@ -187,8 +231,12 @@ const MainContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1; /* Ensure content stays above background */
+  z-index: 1;
   text-align: center;
+
+  @media (max-width: 480px) {
+    padding: 0 15px; /* Add horizontal padding for mobile */
+  }
 `;
 
 const PolaroidWrapper = styled.div`
@@ -196,17 +244,25 @@ const PolaroidWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5px; /* Reduced margin to bring content closer */
+  margin-bottom: 5px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 10px;  /* Slightly increased margin on mobile */
+  }
 `;
 
 const WaveformWrapper = styled.div`
-  margin-bottom: 20px; /* Adjust margin to position the waveform */
-  width: 100%; /* Ensure full width */
-  height: 150px; /* Adjust based on your waveform height */
+  margin-bottom: 20px;
+  width: 100%;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
+
+  @media (max-width: 480px) {
+    display: none;  /* Hide waveform on small screens */
+  }
 `;
 
 const PolaroidFrame = styled.div`
@@ -219,28 +275,46 @@ const PolaroidFrame = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 480px) {
+    width: 250px;  /* Smaller image size on mobile */
+    height: 250px;
+  }
 `;
 
 const Caption = styled.p`
-  margin-top: 8px; /* Reduced margin to tighten spacing */
+  margin-top: 8px;
   font-size: 1rem;
   color: #555;
   text-transform: uppercase;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem; /* Smaller caption text for mobile */
+  }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
-  gap: 12px; /* Reduced gap between icons */
-  margin-top: 25px; /* Reduced margin-top for better spacing */
-  margin-bottom: 30px; /* Reduced margin-bottom to bring it closer to the bottom */
+  gap: 12px;
+  margin-top: 25px;
+  margin-bottom: 30px;
+
+  @media (max-width: 480px) {
+    gap: 8px; /* Smaller gap between icons on mobile */
+    margin-top: 15px;
+  }
 `;
 
 const SocialLink = styled.a`
-  font-size: 1.7rem; /* Larger social icon size */
+  font-size: 1.7rem;
   color: #333;
 
   &:hover {
     color: #555;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem; /* Smaller icons on mobile */
   }
 `;
 
@@ -253,4 +327,8 @@ const Footer = styled.footer`
   width: 100%;
   text-align: center;
   z-index: 1;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem; /* Smaller footer text on mobile */
+  }
 `;

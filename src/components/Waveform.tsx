@@ -10,6 +10,10 @@ const Canvas = styled.canvas`
   width: 400px;
   height: 400px;
   z-index: 0;
+
+  @media (max-width: 480px) {
+    display: none; /* Hide waveform on smaller screens */
+  }
 `;
 
 const useSimulatedOutwardWaveform = (canvasRef: React.RefObject<HTMLCanvasElement | null>) => {
