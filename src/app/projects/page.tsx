@@ -1,8 +1,6 @@
-'use client';
-
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
+import Link from 'next/link'; // Importing Link from next.js
 
 const songs = [
   { id: 1, title: 'to late', videoId: 'AzZ2ozYxzm0' },
@@ -35,9 +33,9 @@ const Projects: React.FC = () => {
         </SongsGrid>
       </Content>
       <BottomNav>
-        <NavLink href="/about">Om</NavLink>
-        <NavLink href="/projects">Utgivelser</NavLink>
-        <NavLink href="/contact">Kontakt</NavLink>
+        <NavLink href="/about">Om</NavLink> {/* Norwegian translation for About */}
+        <NavLink href="/projects">Utgivelser</NavLink> {/* Norwegian translation for Projects */}
+        <NavLink href="/contact">Kontakt</NavLink> {/* Norwegian translation for Contact */}
         <ExternalTabLink href="https://studio51.vercel.app" target="_blank">
           Studio 51
         </ExternalTabLink>
@@ -141,7 +139,7 @@ const BottomNav = styled.div`
   z-index: 2;
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)` /* Using Link component for client-side navigation */
   font-size: 30px;
   font-weight: 500;
   text-decoration: none;

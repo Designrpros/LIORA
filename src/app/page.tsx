@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react'; // Make sure useState is imported
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Waveform from '../components/Waveform'; // Adjust path as needed
@@ -38,8 +38,12 @@ const HomeContent = () => (
 
 const Home: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('/'); // State for manual navigation
+  const [isMounted, setIsMounted] = useState(false); // To track mount status
 
-  // Function to render content based on the current page
+  useEffect(() => {
+    setIsMounted(true); // Update after first render
+  }, []);
+
   const getContent = () => {
     switch (currentPage) {
       case '/about':
@@ -53,6 +57,8 @@ const Home: React.FC = () => {
         return <HomeContent />;
     }
   };
+
+  if (!isMounted) return null; // Render nothing until mounted to avoid layout shift
 
   return (
     <Container>
@@ -69,10 +75,10 @@ const Home: React.FC = () => {
       {getContent()}
       {currentPage !== '/' && (
         <TabBar>
-          <TabButton onClick={() => setCurrentPage('/')}>Home</TabButton>
-          <TabButton onClick={() => setCurrentPage('/about')}>About</TabButton>
-          <TabButton onClick={() => setCurrentPage('/projects')}>Projects</TabButton>
-          <TabButton onClick={() => setCurrentPage('/contact')}>Contact</TabButton>
+          <TabButton onClick={() => setCurrentPage('/')}>Hjem</TabButton>
+          <TabButton onClick={() => setCurrentPage('/about')}>Om</TabButton>
+          <TabButton onClick={() => setCurrentPage('/projects')}>Utgivelser</TabButton>
+          <TabButton onClick={() => setCurrentPage('/contact')}>Kontakt</TabButton>
         </TabBar>
       )}
       <Footer>© {new Date().getFullYear()} STUDIO 51. ALL RIGHTS RESERVED.</Footer>
