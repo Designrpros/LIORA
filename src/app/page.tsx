@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import Waveform from './components/Waveform'; // Adjust path as needed
+import Waveform from '../components/Waveform'; // Adjust path as needed
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'; // Using react-icons
 import About from './about/page'; // Import your actual About component
 import Projects from './projects/page'; // Import your actual Projects component
@@ -86,7 +86,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   min-height: 100vh;
   background-color: #f9f9f9;
   position: relative;
@@ -94,6 +94,8 @@ const Container = styled.div`
   border: 8px solid #000000;  /* Added border */
   box-sizing: border-box;      /* Ensures border doesn't affect layout */
   padding-bottom: 80px;        /* Space for bottom navigation */
+  height: 100vh;               /* Full viewport height */
+  width: 100vw;                /* Full viewport width */
 `;
 
 const FlowerBackground = styled.div`
@@ -178,6 +180,8 @@ const MainContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 1; /* Ensure content stays above background */
+  text-align: center;
 `;
 
 const PolaroidWrapper = styled.div`
