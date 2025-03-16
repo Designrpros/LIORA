@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // Make sure useState is imported
 import styled from 'styled-components';
 import Image from 'next/image';
 import Waveform from '../components/Waveform'; // Adjust path as needed
@@ -39,14 +39,15 @@ const HomeContent = () => (
 const Home: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('/'); // State for manual navigation
 
+  // Function to render content based on the current page
   const getContent = () => {
     switch (currentPage) {
       case '/about':
-        return <About />; // Removed setCurrentPage prop
+        return <About />;
       case '/projects':
-        return <Projects />; // Removed setCurrentPage prop
+        return <Projects />;
       case '/contact':
-        return <Contact />; // Removed setCurrentPage prop
+        return <Contact />;
       case '/':
       default:
         return <HomeContent />;
@@ -190,6 +191,16 @@ const PolaroidWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 5px; /* Reduced margin to bring content closer */
+`;
+
+const WaveformWrapper = styled.div`
+  margin-bottom: 20px; /* Adjust margin to position the waveform */
+  width: 100%; /* Ensure full width */
+  height: 150px; /* Adjust based on your waveform height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 `;
 
 const PolaroidFrame = styled.div`
