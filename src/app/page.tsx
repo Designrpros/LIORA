@@ -16,7 +16,9 @@ const flows = "/flows.png"; // Define flows for FlowerBackground
 const HomeContent = () => (
   <MainContent>
     <PolaroidWrapper>
-      <Waveform />
+      <WaveformContainer>
+        <Waveform />
+      </WaveformContainer>
       <PolaroidFrame>
         <Image 
           src={AuroraB} 
@@ -183,9 +185,18 @@ const MainContent = styled.div`
 const PolaroidWrapper = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column; /* Stack elements vertically */
   align-items: center;
   justify-content: center;
-  margin-bottom: 5px; /* Reduced margin to bring content closer */
+  width: 100%;
+  text-align: center; /* Ensures the content is centered */
+  margin-bottom: 10px;
+`;
+
+const WaveformContainer = styled.div`
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin-bottom: 15px; /* Space before the Polaroid */
 `;
 
 const PolaroidFrame = styled.div`
@@ -193,11 +204,11 @@ const PolaroidFrame = styled.div`
   height: 320px;
   background: white;
   border: 10px solid #fff;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 auto; /* Ensures it’s centered */
 `;
 
 const Caption = styled.p`
