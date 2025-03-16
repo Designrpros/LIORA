@@ -1,9 +1,8 @@
-// About.tsx
-
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
+// Directly define the props here
 interface AboutProps {
   setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -50,7 +49,7 @@ const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
   );
 };
 
-export default About;
+export default About; // Default export
 
 // Styled Components
 const Container = styled.div`
