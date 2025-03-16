@@ -2,19 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-// Directly define the props here
-interface AboutProps {
-  setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
+const About: React.FC = () => {
   return (
     <Container>
       <Content>
         <ImageWrapper>
           <CircularImageWrapper>
             <Image 
-              src="/AuroraB.jpeg" // Directly reference image from public folder
+              src="/AuroraB.jpeg" 
               alt="Liora"
               width={150}
               height={150}
@@ -42,14 +37,12 @@ const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
         <NavLink href="/contact">Kontakt</NavLink>
         <ExternalTabLink href="https://studio51.vercel.app" target="_blank">Studio 51</ExternalTabLink>
       </BottomNav>
-      <Footer>
-        © {new Date().getFullYear()} Studio 51. All rights reserved.
-      </Footer>
+      <Footer>© {new Date().getFullYear()} Studio 51. All rights reserved.</Footer>
     </Container>
   );
 };
 
-export default About; // Default export
+export default About;
 
 // Styled Components
 const Container = styled.div`

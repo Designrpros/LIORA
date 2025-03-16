@@ -42,11 +42,11 @@ const Home: React.FC = () => {
   const getContent = () => {
     switch (currentPage) {
       case '/about':
-        return <About setCurrentPage={setCurrentPage} />;
+        return <About />; // Removed setCurrentPage prop
       case '/projects':
-        return <Projects setCurrentPage={setCurrentPage} />;
+        return <Projects />; // Removed setCurrentPage prop
       case '/contact':
-        return <Contact setCurrentPage={setCurrentPage} />;
+        return <Contact />; // Removed setCurrentPage prop
       case '/':
       default:
         return <HomeContent />;

@@ -4,11 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-interface ContactProps {
-  setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const Contact: React.FC<ContactProps> = ({ setCurrentPage }) => {
+const Contact: React.FC = () => {
   return (
     <Container>
       <Content>
@@ -33,7 +29,7 @@ const Contact: React.FC<ContactProps> = ({ setCurrentPage }) => {
   );
 };
 
-export default Contact;
+export default Contact; // Default export
 
 // Styled Components
 const Container = styled.div`

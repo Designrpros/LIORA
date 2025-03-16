@@ -4,10 +4,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-interface ProjectsProps {
-  setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
-}
-
 const songs = [
   { id: 1, title: 'to late', videoId: 'AzZ2ozYxzm0' },
   { id: 2, title: 'bad company', videoId: '4_g7kwFEypg' },
@@ -20,7 +16,7 @@ const songs = [
   { id: 9, title: 'Casual', videoId: 'igHZG1YyBXI' },
 ];
 
-const Projects: React.FC<ProjectsProps> = ({ setCurrentPage }) => {
+const Projects: React.FC = () => {
   return (
     <Container>
       <Content>
