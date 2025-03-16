@@ -197,11 +197,10 @@ const TabBar = styled.div`
     padding: 10px 0;
   }
 
+  /* Remove flex-direction: column here to keep the tab buttons horizontal on all screen sizes */
   @media (max-width: 480px) {
     padding: 8px 0;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px; /* Stack buttons vertically on mobile */
+    gap: 8px; /* Reduce the gap between buttons on mobile */
   }
 `;
 
