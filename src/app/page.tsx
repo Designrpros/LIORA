@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import Waveform from '../components/Waveform'; // Adjust path as needed
+import Waveform from './components/Waveform'; // Adjust path as needed
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'; // Using react-icons
 import About from './about/page'; // Import your actual About component
 import Projects from './projects/page'; // Import your actual Projects component
